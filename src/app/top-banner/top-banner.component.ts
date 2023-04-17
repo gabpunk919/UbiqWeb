@@ -11,7 +11,7 @@ import { AccueilComponent } from '../accueil/accueil.component';
 })
 
 export class TopBannerComponent implements OnInit {
-  selectedBackground: string = '../../assets/logo2.png';
+  selectedBackground: string = '../../assets/routeVin.jpg';
   url ="";
   typeEvenement=""
   activeTab = 'home'
@@ -26,9 +26,7 @@ export class TopBannerComponent implements OnInit {
   
 
   changeBackground(backgroundUrl: string,typeEvenement:string) {
-    this.selectedBackground = "../../assets/logo2.png";
-    
-    
+    this.selectedBackground = backgroundUrl;
     this.updateValue(typeEvenement);
    
     
