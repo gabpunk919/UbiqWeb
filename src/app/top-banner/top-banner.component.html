@@ -1,5 +1,5 @@
 <div class="nav">
-<div [ngStyle]="{'background-image': 'url(' + selectedBackground + ')','background-position': 'center','background-repeat': 'no-repeat' }"
+<div [ngStyle]="{'background-image': 'url(' + selectedBackground + ')','height':'500px','background-position': 'center','background-repeat': 'no-repeat' }"
     *ngIf="isHomeRoute()">
     <div class="navHaut">
         <nav class="subnav">
@@ -39,12 +39,12 @@
                 <li>
                     <div class="search-container">
                         <input type="text" name="search" placeholder="Recherche..." class="search-input">
-                        <a href="#" class="search-btn">
-                                <i class="fas fa-search"></i>      
-                        </a>
+                       
+                            <i class="fas fa-search" [routerLinkActive]="''" [routerLink]="['/devenez-chauffeur']"></i>    
+                        
                     </div>
             </li>
-
+            
                 <li style="float:right "><a class="" href="">Réservation</a></li>
             </ul>
         </nav>
@@ -126,9 +126,9 @@
                     <li>
                         <div class="search-container">
                             <input type="text" name="search" placeholder="Recherche..." class="search-input">
-                            <a href="#" class="search-btn">
-                                    <i class="fas fa-search"></i>      
-                            </a>
+                           
+                                <i class="fas fa-search" [routerLinkActive]="''" [routerLink]="['/devenez-chauffeur']"></i>    
+                            
                         </div>
                 </li>
     
