@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Router,ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 
+import { DataServiceService } from '../data-service.service';
+import { AccueilComponent } from '../accueil/accueil.component';
 @Component({
   selector: 'app-top-banner',
   templateUrl: './top-banner.component.html',
@@ -9,25 +11,37 @@ import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 })
 
 export class TopBannerComponent implements OnInit {
-  selectedBackground: string = '../../assets/routeVin.jpg';
+  selectedBackground: string = '../../assets/logo2.png';
   url ="";
-  message = "Bienvenue sur notre site!";
+  typeEvenement=""
   activeTab = 'home'
   search : String ="";
     faCoffee = faCoffee;
-  constructor( private  router: Router  ,
-    private activatedRoute: ActivatedRoute) { 
+
+    message!:string;
+ 
+  constructor( private  router: Router,private data:DataServiceService  ) { 
       
   }
   
 
-  changeBackground(backgroundUrl: string) {
-    this.selectedBackground = backgroundUrl;
+  changeBackground(backgroundUrl: string,typeEvenement:string) {
+    this.selectedBackground = "../../assets/logo2.png";
+    
+    
+    this.updateValue(typeEvenement);
+   
+    
   }
   isHomeRoute() {
     return this.router.url === '/';
   }
-  ngOnInit(): void {
-
+ 
+  public updateValue(value:string) {
+    this.data.changeMessage(value);}
+   ngOnInit(){
+   
+  
+   
 }
 }

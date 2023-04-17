@@ -1,0 +1,137 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+   
+  }
+  .box{
+    position: relative;
+}
+.nav{
+  background-color: #1a1a1a;
+}
+.navHaut li {
+  float: left;
+
+}
+h1{
+  color: white;
+}
+.navHaut li a {
+  background-color: #fff;
+  border-radius: 25px;
+  font-weight: bold;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+.navHaut li a:hover {
+  border: 1px solid #333;
+  border-radius: 25px;
+  
+ 
+}
+.search-container{
+  background: #fff;
+  height: 30px;
+  border-radius: 30px;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.8s;
+  /*box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+  inset -7px -7px 10px 0px rgba(0,0,0,.1),
+ 7px 7px 20px 0px rgba(0,0,0,.1),
+ 4px 4px 5px 0px rgba(0,0,0,.1);
+ text-shadow:  0px 0px 6px rgba(255,255,255,.3),
+            -4px -4px 6px rgba(116, 125, 136, .2);
+text-shadow: 2px 2px 3px rgba(255,255,255,0.5);*/
+box-shadow:  4px 4px 6px 0 rgba(255,255,255,.3),
+            -4px -4px 6px 0 rgba(116, 125, 136, .2), 
+  inset -4px -4px 6px 0 rgba(255,255,255,.2),
+  inset 4px 4px 6px 0 rgba(0, 0, 0, .2);
+}
+
+.search-container:hover > .search-input{
+  width: 400px;
+}
+
+.search-container .search-input{
+  background: transparent;
+  border: none;
+  outline:none;
+  width: 0px;
+  font-weight: 500;
+  font-size: 16px;
+  transition: 0.8s;
+
+}
+
+.search-container .search-btn .fas{
+  color: #000000;
+}
+
+
+
+.search-container:hover{
+animation: hoverShake 0.15s linear 3;
+}
+
+.box i{
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translate(-50%,-50%);
+    font-size: 26px;
+    color: black;
+    transition: .2s;
+}
+.box:hover i{
+    opacity: 0;
+    z-index: -1;
+}
+.navPhoto{
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 465px; /* ajustez la hauteur selon vos besoins */
+  font-family: Comic Sans MS;
+  font-size: 26px;
+  color: White;
+}
+.navPhoto li {
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: transparent;
+  color: White;
+}
+
+.navPhoto li:hover {
+  cursor: pointer;
+  background-color: white;
+  border-radius: 25px;
+  color: black;
+}
+  .Réserve {
+    color: white;
+    border: 1px solid black;
+    border-radius: 25px;
+    border-color: black;
+  }
+
+  .imageBack {
+    background-image: url("../../assets/logo.png");
+    height:auto; /* You must set a specified height */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;
+  }

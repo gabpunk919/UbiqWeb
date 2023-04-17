@@ -1,0 +1,116 @@
+<ng-container *ngIf="message | async as mess">
+    <div *ngIf="choixPackage(mess)">
+        <ng-container *ngIf="evenement | async as event">
+
+
+            <div class="card-group">
+
+                <div *ngFor="let evenement of event" class="card">
+                    <div *ngIf="isChalet(evenement)">
+                        <img [src]="evenement.getPhotoLink()" class="card-img-top" height="100px" alt="...">
+
+                        <div class="card-body">
+                            <h5 class="card-title">{{ evenement.getNom() }}</h5>
+                            <p class="card-text">{{ evenement.getDescription() }}</p>
+                            <p class="card-text"><small class="text-muted">{{ evenement.getPrix()}}</small></p>
+                        </div>
+                    </div>
+                    <div *ngIf="isChauffeurVIP(evenement)">
+                        <img [src]="evenement.getPhotoLink()" class="card-img-top" height="100px" alt="...">
+
+                        <div class="card-body">
+                            <h5 class="card-title">{{ evenement.getNom() }}</h5>
+                            <p class="card-text">{{ evenement.getDescription() }}</p>
+                            <p class="card-text"><small class="text-muted">{{ evenement.getPrix()}}</small></p>
+                        </div>
+                    </div>
+                    <div *ngIf="isPleinAir(evenement)">
+                        <img [src]="evenement.getPhotoLink()" class="card-img-top" height="100px" alt="...">
+
+                        <div class="card-body">
+                            <h5 class="card-title">{{ evenement.getNom() }}</h5>
+                            <p class="card-text">{{ evenement.getDescription() }}</p>
+                            <p class="card-text"><small class="text-muted">{{ evenement.getPrix()}}</small></p>
+                        </div>
+                    </div>
+                    <div *ngIf="isRestauration(evenement)">
+                        <img [src]="evenement.getPhotoLink()" class="card-img-top" height="100px" alt="...">
+
+                        <div class="card-body">
+                            <h5 class="card-title">{{ evenement.getNom() }}</h5>
+                            <p class="card-text">{{ evenement.getDescription() }}</p>
+                            <p class="card-text"><small class="text-muted">{{ evenement.getPrix()}}</small></p>
+                        </div>
+                    </div>
+                    <div *ngIf="isRouteVin(evenement)">
+                        <img [src]="evenement.getPhotoLink()" class="card-img-top" height="100px" alt="...">
+
+                        <div class="card-body">
+                            <h5 class="card-title">{{ evenement.getNom() }}</h5>
+                            <p class="card-text">{{ evenement.getDescription() }}</p>
+                            <p class="card-text"><small class="text-muted">{{ evenement.getPrix()}}</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+</ng-container>
+</div>
+</ng-container>
+<!--<ng-container *ngIf="evenement | async as chalet">
+    <div *ngFor="let evenement of chalet">
+
+    
+        <div *ngFor="let evenement of chalet" class="card">
+
+            <img [src]="evenement.getPhotoLink()" class="card-img-top" height="100px" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{ evenement.getNom() }}</h5>
+                <p class="card-text">{{ evenement.getDescription() }}</p>
+                <p class="card-text"><small class="text-muted">{{ evenement.getPrix()}}</small></p>
+            </div>
+        </div>
+    </div>
+</ng-container>
+<ng-container *ngIf="evenement | async as pleinair">
+    <div *ngFor="let evenement of pleinair">
+    
+        <div *ngFor="let evenement of pleinair" class="card">
+
+            <img [src]="evenement.getPhotoLink()" class="card-img-top" height="100px" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{ evenement.getNom() }}</h5>
+                <p class="card-text">{{ evenement.getDescription() }}</p>
+                <p class="card-text"><small class="text-muted">{{ evenement.getPrix()}}</small></p>
+            </div>
+        </div>
+    </div>
+</ng-container>
+<ng-container *ngIf="evenement | async as chauffeur">
+    <div *ngFor="let evenement of chauffeur">
+    
+        <div *ngFor="let evenement of chauffeur" class="card">
+
+            <img [src]="evenement.getPhotoLink()" class="card-img-top" height="100px" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{ evenement.getNom() }}</h5>
+                <p class="card-text">{{ evenement.getDescription() }}</p>
+                <p class="card-text"><small class="text-muted">{{ evenement.getPrix()}}</small></p>
+            </div>
+        </div>
+    </div>
+</ng-container>
+<ng-container *ngIf="evenement | async as restauration">
+    <div *ngFor="let evenement of restauration">
+ 
+        <div *ngFor="let evenement of restauration" class="card">
+
+            <img [src]="evenement.getPhotoLink()" class="card-img-top" height="100px" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{ evenement.getNom() }}</h5>
+                <p class="card-text">{{ evenement.getDescription() }}</p>
+                <p class="card-text"><small class="text-muted">{{ evenement.getPrix()}}</small></p>
+            </div>
+        </div>
+    </div>
+</ng-container>-->

@@ -1,4 +1,4 @@
-class Evenement {
+export class Evenement {
     constructor(private id: number,private nom: string, private description: string,private prix: number,private photoLink: string ) {
         this.id=id;
         this.nom = nom;
