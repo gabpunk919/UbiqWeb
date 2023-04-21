@@ -1,0 +1,85 @@
+<div class="container-evenement">
+    <h1>{{ evenement.getNom() }}</h1>
+    <div class="container-mid">
+        <img [src]="evenement.getPhotoLink()" alt="evenement photo">
+        <div class="container-mid-droit">
+            <div class="review">
+
+
+                <div *ngIf="nombreEtoile()<1" class="star">&#9734;</div>
+                <div *ngIf="nombreEtoile()>=1" class="star">&#9733;</div>
+
+                <div *ngIf="nombreEtoile()<2" class="star">&#9734;</div>
+                <div *ngIf="nombreEtoile()>=2" class="star">&#9733;</div>
+                <div *ngIf="nombreEtoile()<3" class="star">&#9734;</div>
+                <div *ngIf="nombreEtoile()>=3" class="star">&#9733;</div>
+                <div *ngIf="nombreEtoile()<4" class="star">&#9734;</div>
+                <div *ngIf="nombreEtoile()>=4" class="star">&#9733;</div>
+                <div *ngIf="nombreEtoile()<5" class="star">&#9734;</div>
+                <div *ngIf="nombreEtoile()>=5" class="star">&#9733;</div>
+
+
+
+            </div>
+
+            <h3 class="box">{{ evenement.getDescription() }} </h3>
+
+            <h3 class="box">{{ evenement.getPrix() }} </h3>
+
+            <button class="box box--end" value="Réserver" (click)="scrollToComponent()">Réserver</button>
+        </div>
+    </div>
+</div>
+<div class="add-comment">
+    <form #commentForm="ngForm" (ngSubmit)="submitComment()">
+        <div class="form-group">
+            <label for="author">Auteur:</label>
+            <input type="text" id="author" name="author" [(ngModel)]="auteur" required>
+        </div>
+        <div class="review">
+            <label for="rating">Note:</label>
+            <div class="star" (click)="onStarClick(1)">&#9734;</div>
+            <div class="star" (click)="onStarClick(2)">&#9734;</div>
+            <div class="star" (click)="onStarClick(3)">&#9734;</div>
+            <div class="star" (click)="onStarClick(4)">&#9734;</div>
+            <div class="star" (click)="onStarClick(5)">&#9734;</div>
+        </div>
+        <div class="form-group">
+            <label for="comment">Commentaire:</label>
+            <textarea id="comment" name="comment" [(ngModel)]="commentaire" required></textarea>
+        </div>
+        <div class="bouton">
+            <button type="submit" [disabled]="!commentForm.valid">Ajouter</button>
+        </div>
+    </form>
+</div>
+
+<div class="comment">
+    <div class="comment-header">
+        <h3>{{author}}</h3>
+        <div *ngFor="let star of getStars()" class="star">
+            <i class="fa" [ngClass]="{'fa-star': star, 'fa-star-o': !star}"></i>
+        </div>
+    </div>
+    <div class="comment-body">
+        <p>{{comment}}</p>
+    </div>
+</div>
+
+<div class="container-reserver" id="reserver">
+    <form>
+        <label for="participants">Nombre de participants :</label>
+        <select id="participants" name="participants" [(ngModel)]="selectedParticipants">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+        </select>
+
+        <label for="date">Date :</label>
+        <input type="date" id="date" name="date" [(ngModel)]="selectedDate">
+
+        <button type="submit" (click)="Reserver()">Réserver</button>
+    </form>
+
+</div>

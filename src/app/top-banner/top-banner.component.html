@@ -1,6 +1,6 @@
 <div class="nav">
-<div [ngStyle]="{'background-image': 'url(' + selectedBackground + ')','height':'500px','background-position': 'center','background-repeat': 'no-repeat' }"
-    *ngIf="isHomeRoute()">
+<div  [ngStyle]="{'background-image': 'url(' + selectedBackground + ')','background-size': 'cover','background-position': 'center','background-repeat': 'no-repeat' ,'width':'100%' }" >
+    
     <div class="navHaut">
         <nav class="subnav">
             <ul class="nav">
@@ -45,11 +45,13 @@
                     </div>
             </li>
             
-                <li style="float:right "><a class="" href="">Réservation</a></li>
+            
             </ul>
+            <li style="float: right;" class="floatright"><a class="nav-link" [routerLinkActive]="''"
+                [routerLink]="['/']">Réservation</a></li>   
         </nav>
     </div>
-    
+    <div class="background"><img src="../../assets/logo2.png"></div>
     <ul class="navPhoto">
 
         <li>
@@ -85,59 +87,3 @@
 
 </div>
 
-<div class="nav">
-    <div [ngStyle]="{'background-image': 'url(' + selectedBackground + ')','background-position': 'center','background-repeat': 'no-repeat' }"
-        *ngIf="!isHomeRoute()">
-        <div class="navHaut">
-            <nav class="subnav">
-                <ul class="nav">
-                    <a class="nav-link" routerLinkActive="active" [routerLink]="['/']">
-    
-                    </a>
-                    <li class="nav-item">
-    
-                        <a class="nav-link" [routerLink]="['/']">
-    
-    
-                            <span >Accueil</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" [routerLinkActive]="''" [routerLink]="['/about']">
-                            <span>À propos</span>
-    
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" [routerLinkActive]="''" [routerLink]="['/devenez-chauffeur']">
-    
-                            <span>Devenez chauffeur</span>
-    
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" [routerLinkActive]="''" [routerLink]="['/nos-services']">
-                            <span>Nos services</span>
-    
-                        </a>
-    
-                    </li>
-    
-                    <li>
-                        <div class="search-container">
-                            <input type="text" name="search" placeholder="Recherche..." class="search-input">
-                           
-                                <i class="fas fa-search" [routerLinkActive]="''" [routerLink]="['/devenez-chauffeur']"></i>    
-                            
-                        </div>
-                </li>
-    
-                    <li style="float:right "><a class="" href="">Réservation</a></li>
-                </ul>
-            </nav>
-        </div>
-        
-        <ul class="navPhoto">
-    
-        </ul>
-    </div>

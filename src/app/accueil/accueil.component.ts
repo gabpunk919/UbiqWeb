@@ -81,10 +81,17 @@ export class AccueilComponent implements OnInit {
   isRouteVin(t: Evenement): boolean {
     return t instanceof RouteVin;
   }
-  
+  donneEvenement(t: Evenement){
+    this.data.changeEvenement(t);
+  }
    ngOnInit(){
-
-    console.log(this.message);
+    
+    const jsonString = '{"id":0, "nom":"", "description":"","prix":0,"photoLink":""}';
+    const jsonChalet = JSON.parse(jsonString);
+    const jsonChauffeur = JSON.parse(jsonString);
+    const jsonPleinair = JSON.parse(jsonString);
+    const jsonRoutevin = JSON.parse(jsonString);
+    const jsonRestaurant = JSON.parse(jsonString);
     /*switch (this.message) {
       case "default message": {
         this.evenement = this.eventsToObservable(this.dataSource.routesVins);

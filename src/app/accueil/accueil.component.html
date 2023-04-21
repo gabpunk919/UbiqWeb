@@ -3,59 +3,75 @@
         <ng-container *ngIf="evenement | async as event">
 
 
-            <div class="card-group">
+            <div class="card-group ">
+               
+                <div *ngFor="let evenement of event" >
+                    
+                    <div *ngIf="isChalet(evenement)" class="card">
+                        <a [routerLink]="['/réservation', evenement.getId()]" [ngStyle]="{'text-decoration':'none','color' : '#000000'}"
+                        (click)="donneEvenement(evenement)">
+                            <img [src]="evenement.getPhotoLink()" class="card-img-top"  alt="...">
 
-                <div *ngFor="let evenement of event" class="card">
-                    <div *ngIf="isChalet(evenement)">
-                        <img [src]="evenement.getPhotoLink()" class="card-img-top" height="100px" alt="...">
-
-                        <div class="card-body">
-                            <h5 class="card-title">{{ evenement.getNom() }}</h5>
-                            <p class="card-text">{{ evenement.getDescription() }}</p>
-                            <p class="card-text"><small class="text-muted">{{ evenement.getPrix()}}</small></p>
-                        </div>
+                            <div class="card-body">
+                                <h5 class="card-title">{{ evenement.getNom() }}</h5>
+                                <p class="card-text">{{ evenement.getDescription() }}</p>
+                                <p class="card-text"><small class="text-muted">{{ evenement.getPrix()}}</small></p>
+                            </div>
+                        </a>
                     </div>
-                    <div *ngIf="isChauffeurVIP(evenement)">
-                        <img [src]="evenement.getPhotoLink()" class="card-img-top" height="100px" alt="...">
+                    <div *ngIf="isChauffeurVIP(evenement)" class="card">
+                        <a [routerLink]="['/réservation', evenement.getId()]" [ngStyle]="{'text-decoration':'none','color' : '#000000'}"
+                        (click)="donneEvenement(evenement)">
+                        <img [src]="evenement.getPhotoLink()" class="card-img-top"  alt="...">
 
                         <div class="card-body">
                             <h5 class="card-title">{{ evenement.getNom() }}</h5>
                             <p class="card-text">{{ evenement.getDescription() }}</p>
                             <p class="card-text"><small class="text-muted">{{ evenement.getPrix()}}</small></p>
                         </div>
+                    </a>
                     </div>
-                    <div *ngIf="isPleinAir(evenement)">
-                        <img [src]="evenement.getPhotoLink()" class="card-img-top" height="100px" alt="...">
+                    <div *ngIf="isPleinAir(evenement)" class="card">
+                        <a [routerLink]="['/réservation', evenement.getId()]" [ngStyle]="{'text-decoration':'none','color' : '#000000'}"
+                        (click)="donneEvenement(evenement)">
+                        <img [src]="evenement.getPhotoLink()" class="card-img-top"  alt="...">
 
                         <div class="card-body">
                             <h5 class="card-title">{{ evenement.getNom() }}</h5>
                             <p class="card-text">{{ evenement.getDescription() }}</p>
                             <p class="card-text"><small class="text-muted">{{ evenement.getPrix()}}</small></p>
                         </div>
+                    </a>
                     </div>
-                    <div *ngIf="isRestauration(evenement)">
-                        <img [src]="evenement.getPhotoLink()" class="card-img-top" height="100px" alt="...">
+                    <div *ngIf="isRestauration(evenement)" class="card">
+                        <a [routerLink]="['/réservation', evenement.getId()]"  [ngStyle]="{'text-decoration':'none','color' : '#000000'}"
+                        (click)="donneEvenement(evenement)">
+                        <img [src]="evenement.getPhotoLink()" class="card-img-top"alt="...">
 
                         <div class="card-body">
                             <h5 class="card-title">{{ evenement.getNom() }}</h5>
                             <p class="card-text">{{ evenement.getDescription() }}</p>
                             <p class="card-text"><small class="text-muted">{{ evenement.getPrix()}}</small></p>
                         </div>
+                    </a>
                     </div>
-                    <div *ngIf="isRouteVin(evenement)">
-                        <img [src]="evenement.getPhotoLink()" class="card-img-top" height="100px" alt="...">
+                    <div *ngIf="isRouteVin(evenement)" class="card">
+                        <a [routerLink]="['/réservation', evenement.getId()]"  [ngStyle]="{'text-decoration':'none','color' : '#000000'}"
+                        (click)="donneEvenement(evenement)">
+                        <img [src]="evenement.getPhotoLink()" class="card-img-top" alt="...">
 
                         <div class="card-body">
                             <h5 class="card-title">{{ evenement.getNom() }}</h5>
                             <p class="card-text">{{ evenement.getDescription() }}</p>
-                            <p class="card-text"><small class="text-muted">{{ evenement.getPrix()}}</small></p>
+                            <p class="card-text">{{ evenement.getPrix()}}</p>
                         </div>
+                    </a>
                     </div>
                 </div>
             </div>
-    
-</ng-container>
-</div>
+
+        </ng-container>
+    </div>
 </ng-container>
 <!--<ng-container *ngIf="evenement | async as chalet">
     <div *ngFor="let evenement of chalet">

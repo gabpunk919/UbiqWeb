@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-
+import { Component, ViewChild } from '@angular/core';
+import { TopBannerComponent } from './top-banner/top-banner.component';
+import { NavigationEnd, Router } from '@angular/router';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -9,7 +10,18 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Ubiq';
   searchTerm: string = '';
-
+  ShowHeader:boolean=true;
+constructor(private router : Router){
+router.events.subscribe((val)=>{
+  if(val instanceof NavigationEnd){
+    if(val.url == '/accueil2')
+  {
+    this.ShowHeader=false;
+  }else{
+    this.ShowHeader=true;
+  }}
+})
+}
 search(): void {
   console.log('Recherche pour:', this.searchTerm);
   // Ajouter ici la logique de recherche
