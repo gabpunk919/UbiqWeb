@@ -3,7 +3,7 @@
     <div class="container-mid">
         <img [src]="evenement.getPhotoLink()" alt="evenement photo">
         <div class="container-mid-droit">
-            <div class="review">
+            <!--<div class="review">
 
 
                 <div *ngIf="nombreEtoile()<1" class="star">&#9734;</div>
@@ -20,7 +20,7 @@
 
 
 
-            </div>
+            </div>-->
 
             <h3 class="box">{{ evenement.getDescription() }} </h3>
 
@@ -30,7 +30,7 @@
         </div>
     </div>
 </div>
-<div class="add-comment">
+<!--<div class="add-comment">
     <form #commentForm="ngForm" (ngSubmit)="submitComment()">
         <div class="form-group">
             <label for="author">Auteur:</label>
@@ -64,7 +64,7 @@
     <div class="comment-body">
         <p>{{comment}}</p>
     </div>
-</div>
+</div>-->
 
 <div class="container-reserver" id="reserver">
     <form>

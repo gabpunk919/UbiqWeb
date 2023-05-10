@@ -18,12 +18,14 @@ import { NgbCarousel, NgbCarouselConfig, NgbCarouselModule } from '@ng-bootstrap
 import { DataServiceService } from './data-service.service';
 import { TopBanner2Component } from './top-banner2/top-banner2.component';
 import { FormsModule } from '@angular/forms';
+import { LandingPageComponent } from './landing-page/landing-page.component';
+
 const routes: Routes = [
   
-  { path: '', component: AccueilComponent },
-  { path: 'accueil2', component: AccueilComponent },
+  { path: '', component: LandingPageComponent },
+  { path: 'magasiner', component: AccueilComponent },
   { path: 'about', component: AboutComponent },
-  { path: 'devenez-chauffeur', component: DevenezChauffeurComponent },
+  { path: 'devenez-partenaire', component: DevenezChauffeurComponent },
   { path: 'nos-services', component: NosServicesComponent },
   { path: 'réservation/:id', component: ReservationComponent},
   { path: '**', redirectTo: 'home', pathMatch: 'full'}
@@ -35,6 +37,8 @@ const routes: Routes = [
   providers: [DataServiceService,NgbCarouselConfig],
   declarations: [
   
+  
+    
   ]
  
 })
@@ -49,7 +53,8 @@ export class AppRoutingModule { }
     NosServicesComponent,
     FooterComponent,
     ReservationComponent,
-    TopBanner2Component
+    TopBanner2Component,
+    LandingPageComponent
   ],
   imports: [
     BrowserModule,

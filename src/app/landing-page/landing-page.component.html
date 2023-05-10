@@ -1,0 +1,138 @@
+<div class="container">
+    <div class="container2">
+
+        <div class="left">
+            <h2>À Propos de nous</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus dignissim volutpat enim nec vulputate.
+                Quisque pulvinar convallis mi, eu convallis urna iaculis congue. Suspendisse a ornare eros. Cras ligula
+                est, commodo eu molestie in, sagittis vitae mi. Cras porta elit sed varius porttitor. Suspendisse
+                rhoncus ligula ligula, nec commodo velit bibendum sed. Proin nec ullamcorper erat, ultrices laoreet
+                dolor. In hac habitasse platea dictumst. Pellentesque habitant morbi tristique senectus et netus et
+                malesuada fames ac turpis egestas. Duis non sem et risus rutrum iaculis nec in sem. Proin faucibus
+                ultricies congue. Praesent accumsan fringilla lectus, ac rhoncus ligula efficitur ut. </p>
+        </div>
+        <div class="right">
+            <img src="../../assets/monsieur.png" alt="image" />
+        </div>
+    </div>
+</div>
+<ngb-carousel #carousel>
+
+    <ng-template ngbSlide class="caroussel">
+
+        <div class="picsum-img-wrapper">
+            <img src="../../assets/chalet.jpg" alt=" chalet " />
+        </div>
+        <div class="carousel-caption">
+        
+            <div class="bouton">
+                <button type="submit" (click)="changePage('chalet')">Réserver un chalet</button>
+            </div>
+        </div>
+    </ng-template>
+    <ng-template ngbSlide class="caroussel">
+
+        <div class="picsum-img-wrapper">
+            <img src="../../assets/routeVin.jpg" alt=" routeVin" />
+        </div>
+        <div class="carousel-caption">
+     
+            <div class="bouton">
+                <button type="submit" (click)="changePage('routevin')">Réserver la routes des vins</button>
+            </div>
+        </div>
+
+    </ng-template>
+    <ng-template ngbSlide class="caroussel">
+
+        <div class="picsum-img-wrapper">
+            <img src="../../assets/restaurant.jpg" alt=" restaurant " />
+        </div>
+        <div class="carousel-caption">
+       
+            <div class="bouton">
+                <button type="submit" (click)="changePage('restaurant')">Réserver un restaurant</button>
+            </div>
+        </div>
+
+
+    </ng-template>
+    <ng-template ngbSlide class="caroussel">
+
+        <div class="picsum-img-wrapper">
+            <img src="../../assets/driver.jpg" alt=" chauffeur " />
+        </div>
+        <div class="carousel-caption">
+      
+            <div class="bouton">
+                <button type="submit" (click)="changePage('chauffeur')">Réserver un chauffeur VIP</button>
+            </div>
+        </div>
+
+
+    </ng-template>
+</ngb-carousel>
+<div class="nos-services">
+    <h1>Nos Services</h1>
+    
+    <div class="card-group ">
+
+        <div class="card-container">
+
+            <div class="card">
+
+
+                <img src="../../assets/chalet.jpg" class="card-img-top" alt=" chalet " />
+                <div class="card-body">
+                    <h1 class="texte">Chalet</h1>
+                    <p class="texte2"> du texte sur chalet </p>
+                    <div class="bouton">
+                        <button type="submit" (click)="changePage('chalet')">Réserver</button>
+                    </div>
+                </div>
+
+            </div>
+            <div class="card">
+
+
+                <img src="../../assets/restaurant.jpg" class="card-img-top" alt=" restaurant " />
+                <div class="card-body">
+                    <h1 class="texte">restaurant</h1>
+                    <p class="texte2"> du texte sur restaurant </p>
+                    <div class="bouton">
+                        <button type="submit" (click)="changePage('restaurant')">Réserver</button>
+                    </div>
+                </div>
+
+            </div>
+            <div class="card">
+
+
+                <img src="../../assets/routeVin.jpg" class="card-img-top" alt=" route des vins " />
+                <div class="card-body">
+                    <h1 class="texte">Route des vins </h1>
+                    <p class="texte2"> du texte sur route des vins </p>
+                    <div class="bouton">
+                        <button type="submit" (click)="changePage('routevin')">Réserver</button>
+                    </div>
+                </div>
+
+            </div>
+            <div class="card">
+
+
+                <img src="../../assets/chauffeur.jpg" class="card-img-top" alt=" chauffeur " />
+                <div class="card-body">
+                    <h1 class="texte">Chauffeur</h1>
+                    <p class="texte2"> du texte sur chauffeur </p>
+                    <div class="bouton">
+                        <button type="submit" (click)="changePage('chauffeur')">Réserver</button>
+                    </div>
+                </div>
+
+            </div>
+           
+
+            </div>
+        </div>
+    </div>

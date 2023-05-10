@@ -3,10 +3,10 @@
   
     <div class="nav-container">
 
-      <app-top-banner *ngIf="!ShowHeader"></app-top-banner>
-      <app-top-banner2 *ngIf="ShowHeader"></app-top-banner2>
+      <app-top-banner *ngIf="!ShowHeader" class="sticky"></app-top-banner>
+      <app-top-banner2 *ngIf="ShowHeader" class="sticky"></app-top-banner2>
     </div>
-    <div class="component-container">
+    <div class="base-container">
       <router-outlet></router-outlet>
     </div>
     <div class="footer">
