@@ -10,6 +10,7 @@ import { Restauration } from "src/modele/Restauration";
 import { RouteVin } from "src/modele/RouteVin";
 import { Observable, async, of } from 'rxjs';
 import { DataServiceService } from '../data-service.service';
+import { ServiceEvenementService } from '../service/service-evenement.service';
 
 @Component({
   selector: 'app-accueil',
@@ -20,12 +21,15 @@ import { DataServiceService } from '../data-service.service';
 
 export class AccueilComponent implements OnInit {
   
+  dataSource: listData;
  
-  dataSource: listData = new listData()
+
   evenement!: Observable<Evenement[]>;
   message!: Observable<string>;
   private x: string = ""
-  constructor(private data: DataServiceService) {
+  constructor(private data: DataServiceService,private evenementService : ServiceEvenementService) {
+    evenementService.remplirListData();
+    this.dataSource=evenementService.dataSource;
     this.data.getMessage.subscribe(value => {
       this.message = of(value);
     });

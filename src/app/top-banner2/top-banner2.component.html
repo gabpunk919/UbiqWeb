@@ -48,12 +48,16 @@
 
 
                 </ul>
-                <li style="float: right;" class="floatright"><a class="nav-link" [routerLinkActive]="''"
-                        [routerLink]="['/']">Connexion</a></li>
+                <div *ngIf="!isConnected">
+                <li style="float: right;" class="floatright"><a class="nav-link" [routerLinkActive]="''" [routerLink]="['/login']">Connexion</a></li>
+            </div>
+            <div *ngIf="isConnected">
+                <li style="float: right;" class="floatright"><a class="nav-link" (click)="deconnexion()" clickable>Déconnexion</a></li>
+            </div>
             </nav>
 
         </div>
-
+       
         <div class="background"><img src="../../assets/logo2.png"></div>
         <!--<ul class="navPhoto">
 
@@ -93,7 +97,7 @@
                 <button type="submit"><i class="fa fa-handshake-o" aria-hidden="true"></i>
                 </button>
                 <h1>
-                    Discover cities, Connect Locally, Ride VIP
+                    Discover cities, Connect Locally, Ride VIP  
                 </h1>
             
                 <button type="submit"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
@@ -155,11 +159,15 @@
 
 
                 </ul>
-                <li style="float: right;" class="floatright"><a class="nav-link" [routerLinkActive]="''"
-                        [routerLink]="['/']">Connexion</a></li>
+                <div *ngIf="!isConnected">
+                    <li style="float: right;" class="floatright"><a class="nav-link" [routerLinkActive]="''" [routerLink]="['/login']">Connexion</a></li>
+                </div>
+                <div *ngIf="isConnected">
+                    <li style="float: right;" class="floatright"><a class="nav-link" (click)="deconnexion()" clickable>Déconnexion</a></li>
+                </div>
             </nav>
         </div>
-
+       
         <ul class="navPhoto">
 
         </ul>

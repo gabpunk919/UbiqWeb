@@ -1,0 +1,57 @@
+<div *ngIf="inscrit">
+<h1>Connexion</h1>
+<div class="container">
+  <form  [formGroup]="connexionForm" (ngSubmit)="onFormSubmitConnexion()">
+    
+  
+ 
+    <label for="email">Email :</label>
+    <input type="email"  formControlName="email" [ngClass]="{ 'is-invalid': submitted && f['email'].errors }"><br><br>
+    <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+        <div *ngIf="f['email'].errors">A valid email is required</div>
+        
+    </div>
+    <label for="prenom">Mot de passe :</label>
+    <input type = "password" formControlName="mdp"><br><br>
+    <input type="submit" value="Envoyer">
+   
+  </form>
+</div>
+<div class="Pasincrit">
+  <h3>Pas de compte?</h3>
+  <a (click)="inscrire(false)">Inscription</a>
+</div>
+</div>
+<div *ngIf="!inscrit">
+  <h1>Inscription</h1>
+  <div class="container">
+    <form  [formGroup]="inscriptionForm" (ngSubmit)="onFormSubmitInscription()">
+      
+    
+      <label for="nom">Nom :</label>
+      <input type="text"  formControlName="nom" ><br><br>
+      <label for="prenom">Prenom :</label>
+      <input type="text"  formControlName="prenom" ><br><br>
+      <label for="telephone">Telephone :</label>
+      <input type="text"  formControlName="telephone" ><br><br>
+
+      <label for="email">Email :</label>
+      <input type="email"  formControlName="email" [ngClass]="{ 'is-invalid': submitted && f['email'].errors }"><br><br>
+      <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+          <div *ngIf="f['email'].errors">A valid email is required</div>
+          
+      </div>
+      <label for="mdp">Mot de passe :</label>
+      <input type = "password" formControlName="mdp"><br><br>
+ 
+      <label for="mdp2">Confirmation de mot de passe :</label>
+      <input type = "password" formControlName="mdp2"><br><br>
+      <input type="submit" value="Envoyer">
+     
+    </form>
+  </div>
+  <div class="Pasincrit">
+    <h3>Vous avez un compte?</h3>
+    <a (click)="inscrire(true)">Connexion</a>
+  </div>
+  </div>

@@ -78,8 +78,18 @@
 
         <label for="date">Date :</label>
         <input type="date" id="date" name="date" [(ngModel)]="selectedDate">
-
+        
+        
+        
         <button type="submit" (click)="Reserver()">Réserver</button>
     </form>
+   <!-- <mat-form-field>
 
-</div>
+    <mat-calendar  [dateFilter]="filterDates"></mat-calendar>
+      
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      
+        <mat-datepicker #picker ></mat-datepicker>
+      
+      </mat-form-field>
+</div>-->

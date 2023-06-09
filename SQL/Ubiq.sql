@@ -47,36 +47,16 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `Ubiq`.`commentaire`
+-- Table `Ubiq`.`partenaire`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `Ubiq`.`commentaire` (
-  `idcommentaire` INT NOT NULL AUTO_INCREMENT,
-  `commentaire` MEDIUMTEXT NOT NULL,
-  `nom` VARCHAR(45) NOT NULL,
-  `etoile` INT(10) NOT NULL,
-  `Evenement_idEvenement` INT NOT NULL,
-  PRIMARY KEY (`idcommentaire`, `Evenement_idEvenement`),
-  UNIQUE INDEX `idcommentaire_UNIQUE` (`idcommentaire` ASC) VISIBLE,
-  INDEX `fk_commentaire_Evenement1_idx` (`Evenement_idEvenement` ASC) VISIBLE,
-  CONSTRAINT `fk_commentaire_Evenement1`
-    FOREIGN KEY (`Evenement_idEvenement`)
-    REFERENCES `Ubiq`.`Evenement` (`idEvenement`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `Ubiq`.`chauffeur`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `Ubiq`.`chauffeur` (
-  `idchauffeur` INT NOT NULL AUTO_INCREMENT,
+CREATE TABLE IF NOT EXISTS `Ubiq`.`partenaire` (
+  `idpartenaire` INT NOT NULL AUTO_INCREMENT,
   `nom` VARCHAR(45) NOT NULL,
   `prenom` VARCHAR(45) NOT NULL,
   `telephone` VARCHAR(45) NOT NULL,
   `email` VARCHAR(45) NOT NULL,
-  PRIMARY KEY (`idchauffeur`),
-  UNIQUE INDEX `idchauffeur_UNIQUE` (`idchauffeur` ASC) VISIBLE)
+  PRIMARY KEY (`idpartenaire`),
+  UNIQUE INDEX `idchauffeur_UNIQUE` (`idpartenaire` ASC) VISIBLE)
 ENGINE = InnoDB;
 
 
@@ -100,7 +80,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Ubiq`.`disponibilite` (
   `iddisponibilite` INT NOT NULL AUTO_INCREMENT,
-  `date` DATE NULL,
+  `date` DATETIME NULL,
   `Evenement_idEvenement` INT NOT NULL,
   `estDispo` TINYINT NULL,
   `nombrePersonneMax` INT NULL,
@@ -116,11 +96,11 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `Ubiq`.`resevation`
+-- Table `Ubiq`.`reservation`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `Ubiq`.`resevation` (
+CREATE TABLE IF NOT EXISTS `Ubiq`.`reservation` (
   `idresevation` INT NOT NULL AUTO_INCREMENT,
-  `date` DATE NOT NULL,
+  `date` DATETIME NOT NULL,
   `nombrePersonne` INT NOT NULL,
   `disponibilite_iddisponibilite` INT NOT NULL,
   `disponibilite_Evenement_idEvenement` INT NOT NULL,

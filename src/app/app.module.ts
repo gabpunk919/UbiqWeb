@@ -17,9 +17,12 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgbCarousel, NgbCarouselConfig, NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 import { DataServiceService } from './data-service.service';
 import { TopBanner2Component } from './top-banner2/top-banner2.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule,Validators  } from '@angular/forms';
 import { LandingPageComponent } from './landing-page/landing-page.component';
-
+import { LoginComponent } from './login/login.component';
+import { HttpClientModule } from '@angular/common/http';
+import { userConnected } from 'src/DataSource/UserConnected';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 const routes: Routes = [
   
   { path: '', component: LandingPageComponent },
@@ -28,21 +31,20 @@ const routes: Routes = [
   { path: 'devenez-partenaire', component: DevenezChauffeurComponent },
   { path: 'nos-services', component: NosServicesComponent },
   { path: 'réservation/:id', component: ReservationComponent},
+  { path: 'login', component: LoginComponent},
   { path: '**', redirectTo: 'home', pathMatch: 'full'}
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
-  providers: [DataServiceService,NgbCarouselConfig],
+  providers: [DataServiceService,NgbCarouselConfig,userConnected],
   declarations: [
-  
-  
-    
   ]
  
 })
 export class AppRoutingModule { }
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -54,7 +56,8 @@ export class AppRoutingModule { }
     FooterComponent,
     ReservationComponent,
     TopBanner2Component,
-    LandingPageComponent
+    LandingPageComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -65,9 +68,12 @@ export class AppRoutingModule { }
     MatInputModule,
     FontAwesomeModule,
     NgbCarouselModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    MatDatepickerModule
   ],
-  providers: [DataServiceService],
+  providers: [DataServiceService,userConnected],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

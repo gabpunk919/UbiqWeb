@@ -9,6 +9,7 @@ import { RouteVin } from 'src/modele/RouteVin';
 import { listData } from 'src/DataSource/ListData';
 import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 import { DataServiceService } from '../data-service.service';
+import { ServiceEvenementService } from '../service/service-evenement.service';
 
 @Component({
   selector: 'app-nos-services',
@@ -16,13 +17,13 @@ import { DataServiceService } from '../data-service.service';
   styleUrls: ['./nos-services.component.css']
 })
 export class NosServicesComponent implements OnInit {
-  dataSource: listData = new listData()
-  
-  evenementVin:RouteVin[]=this.dataSource.routesVins;
-  evenementChauffeur:ChauffeurVIP[]=this.dataSource.chauffeurs;
-  evenementPleinAirs:PleinAir[]=this.dataSource.pleinAirs;
-  evenementRestaurant:Restauration[]=this.dataSource.restaurations;
-  evenementChalet:Chalet[]=this.dataSource.chalets;
+   dataSource: listData;
+ 
+  evenementVin:RouteVin[]=[];
+  evenementChauffeur:ChauffeurVIP[]=[];
+  evenementPleinAirs:PleinAir[]=[];
+  evenementRestaurant:Restauration[]=[];
+  evenementChalet:Chalet[]=[];
   isChalet(t: Evenement): boolean {
     return t instanceof Chalet;
   }
@@ -38,14 +39,20 @@ export class NosServicesComponent implements OnInit {
   isRouteVin(t: Evenement): boolean {
     return t instanceof RouteVin;
   }
-  constructor(private data: DataServiceService) {
-   
+  constructor(private data: DataServiceService,private evenementService : ServiceEvenementService) {
+    evenementService.remplirListData();
+    this.dataSource=evenementService.dataSource;
+    this.evenementVin=this.dataSource.routesVins;
+    this.evenementChauffeur=this.dataSource.chauffeurs;
+    this.evenementPleinAirs=this.dataSource.pleinAirs;
+    this.evenementRestaurant=this.dataSource.restaurations;
+    this.evenementChalet=this.dataSource.chalets;
    }
    donneEvenement(t: Evenement){
     this.data.changeEvenement(t);
   }
   ngOnInit(): void {
-    
+   
     
   }
 

@@ -36,4 +36,17 @@ export class Evenement {
     setPhotoLink(photoLink:string): void {
         this.photoLink=photoLink;
     }
+    toJson(): object {
+        return {
+          id: this.id,
+          nom: this.nom,
+          description: this.description,
+          prix: this.prix,
+          photos: [ {
+            id: 0,
+            link: ""
+          }],
+          typeEvenement:""
+        };
+}
 }
